@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-Mayday.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:/Users/vlavl/Desktop/fmi/gamedev/FMI-GameDev26/Mayday/Intermediate/Build/Win64/x64/MaydayEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.obj"
+"C:/Users/vlavl/Desktop/fmi/gamedev/FMI-GameDev26/Mayday/Intermediate/Build/Win64/x64/UnrealEditor/Development/Mayday/Mayday.cpp.obj"
+"C:/Users/vlavl/Desktop/fmi/gamedev/FMI-GameDev26/Mayday/Intermediate/Build/Win64/x64/UnrealEditor/Development/Mayday/PerModuleInline.gen.cpp.obj"
+"C:/Users/vlavl/Desktop/fmi/gamedev/FMI-GameDev26/Mayday/Intermediate/Build/Win64/x64/UnrealEditor/Development/Mayday/Default.rc2.res"
+/OUT:"C:/Users/vlavl/Desktop/fmi/gamedev/FMI-GameDev26/Mayday/Intermediate/Build/Win64/x64/UnrealEditor/Development/Mayday/UnrealEditor-Mayday.lib"
