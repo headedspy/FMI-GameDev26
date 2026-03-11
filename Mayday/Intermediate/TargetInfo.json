@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Mayday",
+			"Path": "..\\Source\\Mayday.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "MaydayEditor",
+			"Path": "..\\Source\\MaydayEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
