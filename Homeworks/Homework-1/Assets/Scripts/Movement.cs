@@ -14,14 +14,20 @@ public class Movement : MonoBehaviour
     // track speed ourselves, don't read from rb because on landing the physics collision response zeroes out all velocity
     float currentSpeed;
 
+    CustomAnimator ca;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ca = GetComponent<CustomAnimator>();
     }
 
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
+
+        bool isMoving = Mathf.Abs(rb.velocity.x) > 0.1f;
+        ca.SetWalking(isMoving);
     }
 
     void FixedUpdate()

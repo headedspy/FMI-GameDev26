@@ -16,10 +16,12 @@ public class Jump : MonoBehaviour
     bool isLaunched = false;
 
     Rigidbody2D rb;
+    CustomAnimator ca;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ca = GetComponent<CustomAnimator>();
     }
 
     void Update()
@@ -41,6 +43,9 @@ public class Jump : MonoBehaviour
         {
             ApplyAirborneGravity();
         }
+
+        bool isInAir = !isOnGround;
+        ca.SetJumping(isInAir);
     }
 
     public void Launch()
@@ -50,17 +55,17 @@ public class Jump : MonoBehaviour
 
     void ApplyAirborneGravity()
     {
-        // Falling
+        // falling
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
-        // Gravity with button released
+        // gravity with button released
         else if (rb.velocity.y > 0 && (!Input.GetButton("Jump") || isLaunched))
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
-        // Gravity with button held
+        // gravity with button held
         else if (rb.velocity.y > 0 && Input.GetButton("Jump") && !isLaunched)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.deltaTime;

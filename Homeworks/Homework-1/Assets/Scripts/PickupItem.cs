@@ -8,7 +8,7 @@ public class PickupItem : MonoBehaviour
     {
         if (col.gameObject.name == "Player")
         {
-            Debug.Log("Picked up key!");
+            KeysHUDManager.Instance.CollectKey();
             gameObject.SetActive(false);
         }
     }
