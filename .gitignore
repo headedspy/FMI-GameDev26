@@ -35,16 +35,16 @@ sysinfo.txt
 mono_crash.*
 
 # Unity Visual Scripting
-/[Aa]ssets/Unity.VisualScripting.Generated/
+[Aa]ssets/Unity.VisualScripting.Generated/
 
 # Unity Addressables
-/[Aa]ssets/StreamingAssets/aa*
-/[Aa]ssets/AddressableAssetsData/link.xml*
-/[Aa]ssets/AddressableAssetsData/*/*.bin*
-/[Aa]ssets/Addressables_Temp*
+[Aa]ssets/StreamingAssets/aa*
+[Aa]ssets/AddressableAssetsData/link.xml*
+[Aa]ssets/AddressableAssetsData/*/*.bin*
+[Aa]ssets/Addressables_Temp*
 
 # Unity test scenes
-/[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
 
 # ================================
@@ -88,7 +88,7 @@ mono_crash.*
 ExportedObj/
 .consulo/
 .gradle/
-/[Aa]ssets/Plugins/Editor/JetBrains*
+[Aa]ssets/Plugins/Editor/JetBrains*
 *.DotSettings.user
 
 
