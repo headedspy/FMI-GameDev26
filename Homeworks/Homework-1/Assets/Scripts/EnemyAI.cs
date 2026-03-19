@@ -32,6 +32,7 @@ public class EnemyAI : MonoBehaviour
         rb.freezeRotation = true;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
+
     void Update()
     {
         if (player == null) return;
@@ -69,6 +70,12 @@ public class EnemyAI : MonoBehaviour
         }
 
         ca.SetWalking(isGrounded && Mathf.Abs(rb.velocity.x) > 0.1f);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Lightning"))
+            Destroy(gameObject);
     }
 
     void MoveTowardsPlayer(float distanceToPlayer)

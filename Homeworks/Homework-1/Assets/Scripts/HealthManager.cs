@@ -35,7 +35,9 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         if (cooldownTimer > 0f)
+        {
             cooldownTimer -= Time.deltaTime;
+        }
     }
 
     public void TakeDamage(int amount)
@@ -54,10 +56,6 @@ public class HealthManager : MonoBehaviour
         UpdateHeartsUI();
         CheckLowHealth();
 
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
     }
 
     public int GetCurrentHealth()
@@ -84,10 +82,5 @@ public class HealthManager : MonoBehaviour
         {
             heartImages[i].sprite = i < currentHealth ? fullHeartSprite : emptyHeartSprite;
         }
-    }
-
-    private void Die()
-    {
-        Debug.Log("Player died!");
     }
 }

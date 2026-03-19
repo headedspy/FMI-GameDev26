@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -50,17 +49,12 @@ public class GameManager : MonoBehaviour
 
     private void WinGame()
     {
-        Debug.Log("YOU WIN!");
-        // TODO: SceneManager.LoadScene("WinScene");
-        // TODO: Show win UI panel
+        SceneManager.LoadScene("WinGame");
     }
 
     private void LoseGame()
     {
-        Debug.Log("YOU LOSE!");
-        Time.timeScale = 0;
-        // TODO: SceneManager.LoadScene("LoseScene");
-        // TODO: Show lose UI / restart prompt
+        SceneManager.LoadScene("LoseGame");
     }
 
     public void ResetGame()
