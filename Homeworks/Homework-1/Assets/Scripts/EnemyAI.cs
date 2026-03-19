@@ -5,6 +5,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float moveSpeed = 3f;
     [SerializeField] float detectionRange = 8f;
     [SerializeField] float stopDistance = 0.5f;
+
     [Header("Jumping")]
     [SerializeField] float jumpForce = 7f;
     [SerializeField] float jumpCooldown = 1.2f;
@@ -13,6 +14,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float minJumpHeightDiff = 1.5f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] LayerMask obstacleLayer;
+
     [Header("Ground Check")]
     [SerializeField] Transform groundCheck;
     [SerializeField] float groundCheckRadius = 0.15f;

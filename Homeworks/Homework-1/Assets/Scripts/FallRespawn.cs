@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallRespawn : MonoBehaviour
 {
-    [SerializeField] float fallThreshold = -10f;
+    [SerializeField] float fallThreshold = -10.0f;
     [SerializeField] Transform respawnPoint;
 
     Rigidbody2D rb;
@@ -20,6 +20,8 @@ public class FallRespawn : MonoBehaviour
         {
             transform.position = respawnPoint.position;
             rb.velocity = Vector2.zero;
+
+            HealthManager.Instance.HealFull();
         }
     }
 }

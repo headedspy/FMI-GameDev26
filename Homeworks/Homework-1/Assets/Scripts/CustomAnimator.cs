@@ -5,7 +5,6 @@ public class CustomAnimator : MonoBehaviour
 {
     private Animator animator;
 
-    [Header("Hurt Flash")]
     public float hurtDuration = 0.4f;
 
     void Awake()

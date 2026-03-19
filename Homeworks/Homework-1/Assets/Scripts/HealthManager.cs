@@ -47,6 +47,7 @@ public class HealthManager : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         cooldownTimer = damageCooldown;
 
+        GameManager.Instance.OnPlayerDamaged();
         ScreenEffectsController.Instance.TriggerHit();
         ca.TriggerHurt();
 
@@ -59,10 +60,14 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    public void Heal(int amount)
+    public int GetCurrentHealth()
     {
-        currentHealth += amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        return currentHealth;
+    }
+
+    public void HealFull()
+    {
+        currentHealth = maxHealth;
 
         UpdateHeartsUI();
         CheckLowHealth();
