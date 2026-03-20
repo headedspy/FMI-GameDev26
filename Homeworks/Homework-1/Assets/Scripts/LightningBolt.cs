@@ -26,7 +26,12 @@ public class LightningBolt : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && !onCooldown && uses > 0)
-            StartCoroutine(ShowBolt());
+        {
+            if(GetComponent<Jump>().GetIsOnGround() == false)
+            {
+                StartCoroutine(ShowBolt());
+            }
+        }
     }
 
     IEnumerator ShowBolt()

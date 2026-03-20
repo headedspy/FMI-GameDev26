@@ -53,6 +53,11 @@ public class Jump : MonoBehaviour
         isLaunched = true;
     }
 
+    public bool GetIsOnGround()
+    {
+        return isOnGround;
+    }
+
     void ApplyAirborneGravity()
     {
         // falling

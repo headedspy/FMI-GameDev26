@@ -823,12 +823,12 @@ PrefabInstance:
     - target: {fileID: 2021259099479208353, guid: f98cb9889816c9140a20a73c94f82790,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.4
+      value: -35.69
       objectReference: {fileID: 0}
     - target: {fileID: 2021259099479208353, guid: f98cb9889816c9140a20a73c94f82790,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.19
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 2021259099479208353, guid: f98cb9889816c9140a20a73c94f82790,
         type: 3}
@@ -1861,6 +1861,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1652947548376201917, guid: f79bafbf563fa6b4e9b4b7584b73307e,
         type: 3}
+      propertyPath: deathVFX
+      value: 
+      objectReference: {fileID: 6616831123770259798, guid: 895777829a4b37144bdd15507b9bfa08,
+        type: 3}
+    - target: {fileID: 1652947548376201917, guid: f79bafbf563fa6b4e9b4b7584b73307e,
+        type: 3}
       propertyPath: jumpForce
       value: 5
       objectReference: {fileID: 0}
@@ -2726,6 +2732,7 @@ MonoBehaviour:
   vignettePulseSpeed: 2
   shakeIntensity: 50
   shakeDuration: 1
+  bloomIntensity: 30
 --- !u!1 &1927868205
 GameObject:
   m_ObjectHideFlags: 0
