@@ -11,6 +11,7 @@ public class ScreenEffectsController : MonoBehaviour
 
     private Vignette vignette;
     private LensDistortion lensDistortion;
+    private Bloom bloom;
 
     [Header("Vignette")]
     public float vignetteIntensity = 0.55f;
@@ -19,6 +20,10 @@ public class ScreenEffectsController : MonoBehaviour
     [Header("Shake")]
     public float shakeIntensity = 30f;
     public float shakeDuration = 0.4f;
+
+
+    [Header("Bloom")]
+    public float bloomIntensity = 30.0f;
 
     private bool isLowHealth = false;
     private float pulseTimer = 0f;
@@ -38,6 +43,9 @@ public class ScreenEffectsController : MonoBehaviour
 
         if (!volume.profile.TryGetSettings(out lensDistortion))
             Debug.LogWarning("ScreenEffectsController: LensDistortion not found in profile!");
+
+        if (!volume.profile.TryGetSettings(out bloom))
+            Debug.LogWarning("ScreenEffectsController: Bloom not found in profile!");
     }
 
     void Update()
@@ -87,5 +95,11 @@ public class ScreenEffectsController : MonoBehaviour
         }
 
         lensDistortion.intensity.value = 0f;
+    }
+
+    public void SetLightning(bool LightningState)
+    {
+        bloom.intensity.value = LightningState ? bloomIntensity : 0f;
+        lensDistortion.intensity.value = LightningState ? 50.0f : 0f;
     }
 }

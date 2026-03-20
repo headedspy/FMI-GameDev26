@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+
 public class EnemyAI : MonoBehaviour
 {
     [Header("Movement")]
@@ -18,6 +20,10 @@ public class EnemyAI : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] Transform groundCheck;
     [SerializeField] float groundCheckRadius = 0.15f;
+
+    [SerializeField] float deathFreezeTimeDuration = 0.2f;
+    public ParticleSystem deathVFX;
+
     Rigidbody2D rb;
     CustomAnimator ca;
     Transform player;
@@ -75,7 +81,22 @@ public class EnemyAI : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Lightning"))
-            Destroy(gameObject);
+        {
+            StartCoroutine(HitStop(deathFreezeTimeDuration));
+        }
+    }
+
+    IEnumerator HitStop(float duration)
+    {
+        ParticleSystem burst = Instantiate(deathVFX, transform.position, Quaternion.identity);
+
+        ScreenEffectsController.Instance.SetLightning(true);
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(duration);
+
+        ScreenEffectsController.Instance.SetLightning(false);
+        Time.timeScale = 1f;
+        Destroy(gameObject);
     }
 
     void MoveTowardsPlayer(float distanceToPlayer)
