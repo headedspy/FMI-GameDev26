@@ -143,9 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa3977f325a2a149aea05ffca7c9ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 20
+  jumpForce: 25
   springInDuration: 0.1
   springOutDuration: 0.2
   springNormal: {fileID: 21300000, guid: 9b66be97aa1bcc954ae0141127874561, type: 3}
   springIn: {fileID: 21300000, guid: faa08a4317ca5d801a7b8f1144acad4a, type: 3}
   springOut: {fileID: 21300000, guid: 2015350dd59d0457baf23d1af395923d, type: 3}
+  squishDownAmount: 0.15
+  squishUpAmount: 0.15

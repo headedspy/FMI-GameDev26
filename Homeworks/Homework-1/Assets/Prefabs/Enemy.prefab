@@ -243,6 +243,9 @@ MonoBehaviour:
     m_Bits: 512
   groundCheck: {fileID: 6455845091736737361}
   groundCheckRadius: 0.2
+  deathFreezeTimeDuration: 0.2
+  deathVFX: {fileID: 6616831123770259798, guid: 895777829a4b37144bdd15507b9bfa08,
+    type: 3}
 --- !u!50 &2522843967487726998
 Rigidbody2D:
   serializedVersion: 4

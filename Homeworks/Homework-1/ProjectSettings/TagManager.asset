@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Lightning
+  - EntryPoint
+  - ExitPoint
   layers:
   - Default
   - TransparentFX
