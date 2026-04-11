@@ -30,6 +30,8 @@ void ACockpitPilot::BeginPlay()
     Super::BeginPlay();
     if (APlayerController* PlayerController = Cast<APlayerController>(GetController()))
     {
+        PlayerController->bEnableMouseOverEvents = true;
+
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
         {
             Subsystem->AddMappingContext(CockpitMappingContext, 0);
