@@ -85,5 +85,6 @@ void ACockpit::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
     AltmeterInstrument->SetInstrumentValue(GetActorLocation().Z);
+    HeadingInstrument->SetInstrumentValue(GetActorRotation().Yaw);
 }
 

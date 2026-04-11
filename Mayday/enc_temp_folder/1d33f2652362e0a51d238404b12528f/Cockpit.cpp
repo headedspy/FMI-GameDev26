@@ -11,12 +11,9 @@
 #include "Mayday/Modules/Module.h"
 
 
-
 ACockpit::ACockpit()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 void ACockpit::BeginPlay()
@@ -83,12 +80,13 @@ void ACockpit::BeginPlay()
 	
 }
 
-// Called every frame
 void ACockpit::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+    AddActorLocalRotation(FRotator(0.f, 30.f * DeltaTime, 0.f));
 
-    AltmeterInstrument->SetInstrumentValue(GetActorLocation().Y);
+    AltmeterInstrument->SetInstrumentValue(GetActorLocation().Z);
+    HeadingInstrument->SetInstrumentValue(GetActorRotation().Yaw);
 }
 

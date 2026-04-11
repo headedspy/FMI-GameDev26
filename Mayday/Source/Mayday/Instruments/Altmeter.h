@@ -46,7 +46,7 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	class USceneComponent* RotorTenthousands;
 
-	// Target roll angles for each rotor
+
 	float TargetOnes;
 	float TargetTens;
 	float TargetHundreds;
@@ -60,7 +60,6 @@ private:
 	float CurrentRollTenThousands;
 
 
-	// How fast the rotors spin (degrees per second)
-	UPROPERTY(EditAnywhere, Category = "Altimeter")
+	UPROPERTY(EditAnywhere)
 	float RotorInterpSpeed = 10.0f;
 };

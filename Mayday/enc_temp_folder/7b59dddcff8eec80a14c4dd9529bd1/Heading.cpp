@@ -21,7 +21,7 @@ void AHeading::Tick(float DeltaTime)
 	auto InterpCompass = [&](float& Current, float Target)
 	{
 		Current = FMath::FInterpTo(Current, Target, DeltaTime, CompassInterpSpeed);
-		RotatingComponent->SetRelativeRotation(FRotator(0.0f, Current, 0.0f));
+		RotatingComponent->SetRelativeRotation(FRotator(0.0f, 0.0f, Current));
 	};
 
 	InterpCompass(CurrentHeading, TargetHeading);
