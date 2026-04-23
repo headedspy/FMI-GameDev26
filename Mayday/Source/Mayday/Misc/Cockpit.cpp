@@ -8,6 +8,7 @@
 #include "Mayday/Instruments/VerticalAirspeed.h"
 #include "Mayday/Instruments/Heading.h"
 #include "Mayday/Instruments/Fuel.h"
+#include "Mayday/Misc/Yoke.h"
 #include "Mayday/Modules/Module.h"
 
 
@@ -43,6 +44,8 @@ void ACockpit::BeginPlay()
         if (AVerticalAirspeed* VerticalAirspeedCast = Cast<AVerticalAirspeed>(Child)) VerticalAirspeedInstrument = VerticalAirspeedCast;
         if (AHeading* HeadingCast = Cast<AHeading>(Child)) HeadingInstrument = HeadingCast;
         if (AFuel* FuelCast = Cast<AFuel>(Child)) FuelInstrument = FuelCast;
+
+        if (AYoke* YokeCast = Cast<AYoke>(Child)) Yoke = YokeCast;
 
         if (AModule* ModuleCast = Cast<AModule>(Child)) Modules.Add(ModuleCast);
     }

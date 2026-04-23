@@ -3,12 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Instrument.h"
-#include "Fuel.generated.h"
+#include "Interactable.h"
+#include "Panel.generated.h"
 
 
 UCLASS()
-class MAYDAY_API AFuel : public AInteractable
+class MAYDAY_API APanel : public AInteractable
 {
 	GENERATED_BODY()
 	

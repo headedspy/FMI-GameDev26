@@ -15,11 +15,17 @@ public:
     ACockpitPilot();
     virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
-    // Call this to lock/unlock look during reboot procedures
     void SetLookLocked(bool bLocked);
+
+    void MoveToLocation(USceneComponent* Target);
+
+    void ReturnToDefault();
+
+    FORCEINLINE bool GetIsZoomedIn() { return bIsZoomedIn; }
 
 protected:
     virtual void BeginPlay() override;
+    virtual void Tick(float DeltaTime) override;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Cockpit|Components")
     TObjectPtr<USceneComponent> CockpitRoot;
@@ -42,11 +48,14 @@ protected:
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Cockpit|Input")
     TObjectPtr<class UInputAction> IA_FreeLook;
 
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Cockpit|Input")
+    TObjectPtr<UInputAction> IA_Return;
+
     UPROPERTY(EditDefaultsOnly, Category = "Cockpit|Feel")
     float LookSensitivity = 0.6f;
 
     UPROPERTY(EditDefaultsOnly, Category = "Cockpit|Feel")
-    float YawLimit = 110.0f;   // degrees either side
+    float YawLimit = 110.0f;
 
     UPROPERTY(EditDefaultsOnly, Category = "Cockpit|Feel")
     float PitchMin = -40.0f;
@@ -63,4 +72,27 @@ private:
     float CurrentPitch = 0.0f;
     bool  bFreeLookHeld = false;
     bool  bLookLocked = false;
+
+    // from
+    FVector  LerpFromLocation = FVector::ZeroVector;
+    FRotator LerpFromRotation = FRotator::ZeroRotator;
+    float    LerpFromYaw = 0.f;
+    float    LerpFromPitch = 0.f;
+
+    // to
+    FVector  LerpToLocation = FVector::ZeroVector;
+    FRotator LerpToRotation = FRotator::ZeroRotator;
+    float    LerpToYaw = 0.f;
+    float    LerpToPitch = 0.f;
+
+    // snapshot
+    FVector  PreZoomLocation = FVector::ZeroVector;
+    FRotator PreZoomRotation = FRotator::ZeroRotator;
+    float    PreZoomYaw = 0.f;
+    float    PreZoomPitch = 0.f;
+
+    bool  bIsMovingCamera = false;
+    bool  bIsZoomedIn = false;
+    float CameraMoveDuration = 0.3f;
+    float CameraMoveElapsed = 0.f;
 };

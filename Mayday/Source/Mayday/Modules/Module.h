@@ -3,11 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "Mayday/Misc/Interactable.h"
 #include "Module.generated.h"
 
 UCLASS()
-class MAYDAY_API AModule : public AActor
+class MAYDAY_API AModule : public AInteractable
 {
 	GENERATED_BODY()
 	

@@ -55,4 +55,7 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	TArray<class AModule*> Modules;
+
+	UPROPERTY(EditDefaultsOnly)
+	class AYoke* Yoke;
 };

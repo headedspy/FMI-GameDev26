@@ -23,15 +23,24 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class UBoxComponent* InteractionBox;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class USceneComponent* CameraMoveLocation;
+
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
 private:
+
+	bool IsActive = false;
 
 	UFUNCTION()
 	void OnInteractionBoxBeginCursorOver(UPrimitiveComponent* TouchedComponent);
 
 	UFUNCTION()
 	void OnInteractionBoxEndCursorOver(UPrimitiveComponent* TouchedComponent);
+
+
+	UFUNCTION()
+	void OnInteractionBoxClicked(UPrimitiveComponent* TouchedComponent, FKey ButtonPressed);
 
 };
